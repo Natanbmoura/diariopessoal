@@ -16,3 +16,8 @@ export class UserController {
    }
 }
 
+@HttpCode(HttpStatus.OK)
+   @Post('login')
+   async login(@Body() loginDto:CreateUserDto){
+       return this.userService.login(loginDto);
+   }
